@@ -1,0 +1,39 @@
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    namespace Program158
+    {
+    internal class Program
+    {
+        static void Main()
+        {
+            Console.Write("Введите букву направления (N/S/W/E): ");
+            string  input = Console.ReadLine()?.Trim().ToUpper();
+
+            if (string.IsNullOrEmpty(input) || input.Length != 1)
+            {
+                Console.WriteLine("Ошибка: введите ровно одну букву.");
+                return;
+            }
+
+            char direction = input[0];
+            string result;
+
+            switch (direction)
+            {
+                case 'N': result = "Север"; break;
+                case 'S': result = "Юг"; break;
+                case 'W': result = "Запад"; break;
+                case 'E': result = "Восток"; break;
+                default:
+                    Console.WriteLine("Неверное направление.");
+                    return;
+            }
+
+            Console.WriteLine(result);
+        }
+    }
+    }
